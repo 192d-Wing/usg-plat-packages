@@ -1,0 +1,28 @@
+Architectures: amd64 arm64
+Codename: stable
+Components: main
+Date: Sat, 07 Nov 2026 17:28:04 +0000
+Description: usg-plat (unsigned; packages verified at install by usg-plat-verify)
+Label: usg-plat
+Origin: usg-plat
+Suite: stable
+MD5Sum:
+ 1d8558885aefd110dd68d918bb1af073             2708 main/binary-amd64/Packages
+ 3d6d569554b293cef44de81311f010e5             1436 main/binary-amd64/Packages.gz
+ a595d11398345bb2491a4be5cfd7d6f6             2708 main/binary-arm64/Packages
+ a8ab93b5a03691661aaa53f183d0ce8d             1440 main/binary-arm64/Packages.gz
+SHA1:
+ d651061b47323d502fd7e976ee9ce507eaf3b3e1             2708 main/binary-amd64/Packages
+ ca985cc916fa495f7b974204536c56e915803f5e             1436 main/binary-amd64/Packages.gz
+ 64cda3ab572058dc0f6de777e244d53fa9880873             2708 main/binary-arm64/Packages
+ 60b17705f56d9ae701f9ce3de1936f781702d3bd             1440 main/binary-arm64/Packages.gz
+SHA256:
+ b3a1638134dc240d7f65ec4626e96d067aee14c9a597418963753ee75d149f2a             2708 main/binary-amd64/Packages
+ 01fe79921bbdeec8a444e2eb978015f505e41df9abad614f5909e1b1d790fa9d             1436 main/binary-amd64/Packages.gz
+ 0242bf7d6dbb32caf43dc8ecda0b3386ecbf4673a4af513c920ba870b3eab661             2708 main/binary-arm64/Packages
+ ff1f0f18b1a320edd297fe7d2cec70d8a1888dd02dfe12c49758768bab1738b6             1440 main/binary-arm64/Packages.gz
+SHA512:
+ e4c3a4e110f437c2ddc4b11d55032b075a42e2f266c4e3a56efdc35454388551001c08bff8d29c3ac1e414e97d19bbb905f92c7ccb1cb6de48138fe7314423a1             2708 main/binary-amd64/Packages
+ e23897927bd2a139864071f9e938a7509fbc092adbec120d6b6edbdcaba23267565ca11175e30bbf9f6ef2ada424428a08dfbe11fd11d7146e892729e92930aa             1436 main/binary-amd64/Packages.gz
+ d30dd6e93f8a5ab6dd05b3905a1949b8c0408905ec77a0029362d5fccd470ef950853d24875b153cd8de822f8030c149639d2eeb6d7896436298ecd4858be899             2708 main/binary-arm64/Packages
+ 4d7a794206a91004167866c7b210ccdf540c4172c6f50b1ac1aa88b0504c07fc8966f7d237d34cda9afae319fc865f1820d288c58c8361b956c8c71f61d08a33             1440 main/binary-arm64/Packages.gz

@@ -1,0 +1,58 @@
+Package: platd
+Architecture: amd64
+Version: 0.4.0-1
+Priority: optional
+Section: net
+Maintainer: usg-plat Contributors
+Installed-Size: 12059
+Depends: libc6 (>= 2.34), libgcc-s1, nftables, systemd, usg-plat-verify
+Filename: pool/main/platd_0.4.0-1_amd64.deb
+Size: 3333892
+MD5sum: fa5cac72788aec92265d513367a2eeaf
+SHA1: 1715be1d234152104280829fe9d1fe13a80bcf48
+SHA256: 0f82e182ff5ee61a0b5749fec0fdf3de3932e420273cdc787db04bec395ae181
+SHA512: 1f1fa8d8425dac3398a55f8bb0366bd951dfa94e2f063219097edf32921d3caf08a3320e956af3215b889c36cc1ea36e05f7403a262ff2ed560e18282e1ebdc1
+Description: usg-plat daemon: multithreaded 464XLAT PLAT / stateful NAT64
+ Multithreaded 464XLAT PLAT / stateful NAT64 translator (RFC 6877, RFC 6146, RFC
+ 7915) with SIEM attribution logging.
+
+Package: usg-plat-pin-canary
+Architecture: all
+Version: 0.0.0
+Priority: optional
+Section: admin
+Maintainer: usg-plat Contributors
+Filename: pool/main/usg-plat-pin-canary_0.0.0_all.deb
+Size: 880
+MD5sum: 0b8f5bd714adacbe497d3b38dbe2f145
+SHA1: 940e0058f501963a2154c0376aa6320fd4581d04
+SHA256: 95391f6b6f11066eef9ca61f28093b26401acd66e91e3f87e986b202113c7076
+SHA512: f7764e368fcb272c08dc9a7cacd1f0cfd321b3ab0e958a1b863a969a3e826c5d029d1ba33cf16b7e180084e4d9effa75c5f235248417e5a4dfa18968a2f889ec
+Description: apt pin canary for the usg-plat repository (never installable)
+ Empty package. The usg-plat repository publishes it so that
+ `usg-plat-verify selftest --apt` can show that the -1 pin for names other
+ than platd and usg-plat-verify matches the repository origin: apt must
+ report `Candidate: (none)` for it. If apt ever offers to install it, the
+ pin does not match and the host fails open; selftest then fails.
+
+Package: usg-plat-verify
+Architecture: all
+Version: 0.4.0-1
+Priority: optional
+Section: admin
+Maintainer: usg-plat Contributors
+Depends: apt (>= 2.6), coreutils, util-linux
+Filename: pool/main/usg-plat-verify_0.4.0-1_all.deb
+Size: 20252
+MD5sum: db17aba4130cc566f68b6e7128c213f6
+SHA1: e0768c5f0d04e68f52de21975703b04df23f7622
+SHA256: 62cfc863d48aaa74eb8452776af4d67fcd2909c4233641f853b44fa1269290ec
+SHA512: 247c17814886e295952b653d3b9b4e63658844a2e94033480583fe4513050c9d7e8f32363cacc73fec4cd0ede41bc6bbb500757da737664da96966bffb5e0eed
+Description: install-time signature gate for usg-plat packages
+ Refuses apt installs and upgrades of platd and usg-plat-verify unless the
+ package's SHA-256 is listed in the release SHA256SUMS and that file's cosign
+ keyless signature verifies offline against the pinned Sigstore trusted root
+ and the exact release workflow identity. Requires an operator-installed
+ cosign >= 3.0.3 (/usr/local/bin/cosign by default); without it every
+ usg-plat install is refused. dpkg -i bypasses the gate.
+
