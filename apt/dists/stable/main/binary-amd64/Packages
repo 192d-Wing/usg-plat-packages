@@ -16,6 +16,24 @@ Description: usg-plat daemon: multithreaded 464XLAT PLAT / stateful NAT64
  Multithreaded 464XLAT PLAT / stateful NAT64 translator (RFC 6877, RFC 6146, RFC
  7915) with SIEM attribution logging.
 
+Package: platd
+Architecture: amd64
+Version: 0.4.1-1
+Priority: optional
+Section: net
+Maintainer: usg-plat Contributors
+Installed-Size: 12059
+Depends: libc6 (>= 2.34), libgcc-s1, nftables, systemd, usg-plat-verify
+Filename: pool/main/platd_0.4.1-1_amd64.deb
+Size: 3338312
+MD5sum: bf8fd67a370f1ecdd918b77d8a52be90
+SHA1: a601b8fb2ab3c508faa4a3fa35c43ee7045b7d5c
+SHA256: 001bd4cd997756d20610b30ed2d3a9922394806a1ce3d74d24c9d3c059be6d41
+SHA512: fd418d37d1d04fd82eb301e4506d8037d954ebac607efe2f7f886bcfab1c795e9df2bedbaa5a0b74246c6de80a299d35246ebba57f348c0dd393848a9d2f2c63
+Description: usg-plat daemon: multithreaded 464XLAT PLAT / stateful NAT64
+ Multithreaded 464XLAT PLAT / stateful NAT64 translator (RFC 6877, RFC 6146, RFC
+ 7915) with SIEM attribution logging.
+
 Package: usg-plat-pin-canary
 Architecture: all
 Version: 0.0.0
@@ -48,6 +66,27 @@ MD5sum: db17aba4130cc566f68b6e7128c213f6
 SHA1: e0768c5f0d04e68f52de21975703b04df23f7622
 SHA256: 62cfc863d48aaa74eb8452776af4d67fcd2909c4233641f853b44fa1269290ec
 SHA512: 247c17814886e295952b653d3b9b4e63658844a2e94033480583fe4513050c9d7e8f32363cacc73fec4cd0ede41bc6bbb500757da737664da96966bffb5e0eed
+Description: install-time signature gate for usg-plat packages
+ Refuses apt installs and upgrades of platd and usg-plat-verify unless the
+ package's SHA-256 is listed in the release SHA256SUMS and that file's cosign
+ keyless signature verifies offline against the pinned Sigstore trusted root
+ and the exact release workflow identity. Requires an operator-installed
+ cosign >= 3.0.3 (/usr/local/bin/cosign by default); without it every
+ usg-plat install is refused. dpkg -i bypasses the gate.
+
+Package: usg-plat-verify
+Architecture: all
+Version: 0.4.1-1
+Priority: optional
+Section: admin
+Maintainer: usg-plat Contributors
+Depends: apt (>= 2.6), coreutils, util-linux, curl | wget, ca-certificates
+Filename: pool/main/usg-plat-verify_0.4.1-1_all.deb
+Size: 20272
+MD5sum: 783b31a26bd63f1356deb9010555c030
+SHA1: 53a6ec6d4b5ff21c5a6d815c3156bbb8b061f545
+SHA256: e483243af7c2615edc9f03c23ef0b69dbfa97b4ce6fb3f538e5603dd487b1e81
+SHA512: b013392558aa42b99c925f797914b7ed1621ace624367d86dc857dc62eeaa41ca479bd39b0b73fc72720a813dbe21549c3a70916ec8a7a6d2bca3735c7dc0eff
 Description: install-time signature gate for usg-plat packages
  Refuses apt installs and upgrades of platd and usg-plat-verify unless the
  package's SHA-256 is listed in the release SHA256SUMS and that file's cosign
